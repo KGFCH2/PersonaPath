@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 {% block content %}
 <section class="explore">
@@ -7,8 +6,23 @@
       <input id="searchBox" class="search xl" placeholder="Search 500+ skills & careers">
       <span class="muted">Hover a card to flip for details</span>
     </div>
-    <div id="cards" class="grid-cards"></div>
+
+    <div id="cards" class="grid-cards">
+      <!-- Example Card -->
+      <div class="card3d">
+  <div class="card3d-inner">
+    <div class="card-face card-front">
+      <h4>Frontend Developer</h4>
+      <p>Build websites & apps</p>
+    </div>
+    <div class="card-face card-back">
+      <p>Skills: HTML, CSS, JS, React</p>
+      <div class="links">
+        <a href="#">Learn More</a>
+      </div>
+    </div>
   </div>
+</div>
 </section>
 <script defer src="{{ url_for('static', filename='explore.js') }}"></script>
 {% endblock %}

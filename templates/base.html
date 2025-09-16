@@ -1,10 +1,9 @@
-
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="https://www.svgrepo.com/show/489654/work.svg" />
+  <link rel="icon" type="image/svg+xml" href="https://www.svgrepo.com/show/489654/work.svg">
   <title>Career & Skills Advisor</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   <script defer src="{{ url_for('static', filename='theme.js') }}"></script>
@@ -24,9 +23,11 @@
       <span class="moon">🌙</span>
     </button>
   </nav>
+
   <main>
     {% block content %}{% endblock %}
   </main>
+
   <footer class="footer glass">
     <div>© {{ 2025 }} PersonaPath • Personalized Career & Skills Advisor</div>
   </footer>

@@ -1,17 +1,21 @@
-
 {% extends "base.html" %}
 {% block content %}
 <section class="dash">
   <div class="dash-grid">
+    <!-- Quick Search -->
     <div class="glass widget">
       <h3>Quick Search</h3>
       <input id="quickSearch" class="search" placeholder="Try: Python, Data Scientist, React">
       <div id="quickResults" class="grid-cards"></div>
     </div>
+
+    <!-- Career Path Suggestions -->
     <div class="glass widget">
       <h3>Career Path Suggestions</h3>
       <ul id="pathSuggest" class="plain"></ul>
     </div>
+
+    <!-- Learning Shortcuts -->
     <div class="glass widget">
       <h3>Learning Shortcuts</h3>
       <div class="links-list">

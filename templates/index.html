@@ -1,22 +1,24 @@
-
 {% extends "base.html" %}
 {% block content %}
 <section class="hero">
   <div class="hero-left">
     <h1 class="title glow">Find your next career move.</h1>
     <p class="subtitle">Tell us your skills and interests. Get role suggestions, learning paths, and projects.</p>
+
     <div class="cta-row">
       <a class="primary-btn" href="{{ url_for('explore') }}">Start Exploring</a>
       <a class="secondary-btn" href="{{ url_for('chat') }}">Ask the Advisor</a>
     </div>
+
     <ul class="bullets">
       <li>500+ skills & careers with summaries</li>
       <li>Direct links to top learning sites</li>
       <li>Dark/Light theme • glass UI • animations</li>
     </ul>
   </div>
+
   <div class="hero-right">
-    <!-- Career-related inline SVG illustration -->
+    <!-- SVG Illustration -->
     <svg class="hero-art" viewBox="0 0 600 500" aria-label="Career journey illustration">
       <defs>
         <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
