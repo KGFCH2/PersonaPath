@@ -1,0 +1,34 @@
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="https://www.svgrepo.com/show/489654/work.svg" />
+  <title>Career & Skills Advisor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script defer src="{{ url_for('static', filename='theme.js') }}"></script>
+</head>
+<body>
+  <nav class="navbar glass">
+    <div class="brand">PersonaPath</div>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}" class="nav-btn" data-glow>Home</a>
+      <a href="{{ url_for('dashboard') }}" class="nav-btn" data-glow>Dashboard</a>
+      <a href="{{ url_for('explore') }}" class="nav-btn" data-glow>Explore</a>
+      <a href="{{ url_for('chat') }}" class="nav-btn" data-glow>Chat</a>
+      <a href="{{ url_for('login') }}" class="nav-btn" data-glow>Login</a>
+    </div>
+    <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">
+      <span class="sun">☀</span>
+      <span class="moon">🌙</span>
+    </button>
+  </nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer glass">
+    <div>© {{ 2025 }} PersonaPath • Personalized Career & Skills Advisor</div>
+  </footer>
+</body>
+</html>

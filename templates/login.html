@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="auth-wrap">
+  <div class="glass card pulse">
+    <h2 class="card-title">Welcome back</h2>
+    <form class="form-grid" onsubmit="event.preventDefault(); window.location.href='{{ url_for('dashboard') }}'">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" placeholder="you@example.com" required autocomplete="email">
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" placeholder="••••••••" required autocomplete="current-password">
+      </label>
+      <button class="primary-btn glow-strong" type="submit">Login</button>
+      <div class="muted">No account? <a href="#">Sign up</a></div>
+    </form>
+  </div>
+</section>
+{% endblock %}

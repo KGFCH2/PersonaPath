@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="dash">
+  <div class="dash-grid">
+    <div class="glass widget">
+      <h3>Quick Search</h3>
+      <input id="quickSearch" class="search" placeholder="Try: Python, Data Scientist, React">
+      <div id="quickResults" class="grid-cards"></div>
+    </div>
+    <div class="glass widget">
+      <h3>Career Path Suggestions</h3>
+      <ul id="pathSuggest" class="plain"></ul>
+    </div>
+    <div class="glass widget">
+      <h3>Learning Shortcuts</h3>
+      <div class="links-list">
+        <a target="_blank" href="https://www.freecodecamp.org">freeCodeCamp</a>
+        <a target="_blank" href="https://developer.mozilla.org">MDN Web Docs</a>
+        <a target="_blank" href="https://www.coursera.org">Coursera</a>
+        <a target="_blank" href="https://www.edx.org">edX</a>
+        <a target="_blank" href="https://www.kaggle.com/learn">Kaggle Learn</a>
+        <a target="_blank" href="https://aws.amazon.com/training">AWS Training</a>
+        <a target="_blank" href="https://roadmap.sh">roadmap.sh</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script defer src="{{ url_for('static', filename='dashboard.js') }}"></script>
+{% endblock %}

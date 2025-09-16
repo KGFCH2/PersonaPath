@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="chat-wrap">
+  <div class="chat-window glass">
+    <div id="chatLog" class="chat-log"></div>
+    <form id="chatForm" class="chat-form" autocomplete="off">
+      <input id="chatInput" class="chat-input" placeholder="Ask about a skill or career (e.g., 'AI', 'Frontend', 'cloud architect')">
+      <button class="primary-btn" type="submit">Send</button>
+    </form>
+  </div>
+</section>
+<script defer src="{{ url_for('static', filename='chat.js') }}"></script>
+{% endblock %}

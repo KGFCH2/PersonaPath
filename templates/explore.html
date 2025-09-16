@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="explore">
+  <div class="glass">
+    <div class="explore-head">
+      <input id="searchBox" class="search xl" placeholder="Search 500+ skills & careers">
+      <span class="muted">Hover a card to flip for details</span>
+    </div>
+    <div id="cards" class="grid-cards"></div>
+  </div>
+</section>
+<script defer src="{{ url_for('static', filename='explore.js') }}"></script>
+{% endblock %}
