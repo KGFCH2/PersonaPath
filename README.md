@@ -4,16 +4,16 @@ A ready-to-run website built with **HTML, CSS, JS** on the frontend and **Python
 _A beautiful, lightweight career-advisor experience with a rules-based chat and 500+ skills & career paths._ 🌱📈
 
 ---
-
+>>>>>>> 83de9de (Add Vercel Docker deployment config (vercel.json, Dockerfile) and README instructions)
+>>>>>>> 83de9de (Add Vercel Docker deployment config (vercel.json, Dockerfile) and README instructions)
+>>>>>>> 83de9de (Add Vercel Docker deployment config (vercel.json, Dockerfile) and README instructions)
 ## ✨ Features
-- 🪟 Cool **glassmorphism login** with subtle animations  
-- 💬🤖 **Career advisor chat** backed by a rules engine and curated dataset  
-- 📚🔗 **500+ skills & careers** with bullets, learning paths, and links  
-- 🌞🌙 **Dark / Light** theme toggle with glowing sun / moon button  
-- ✨🖱️ Transparent blur effects, glowing active tabs, and micro-interactions  
-- 🔄📇 **Hover to flip** skill/career cards to reveal bullets and links  
-- 🗺️🚀 Home page includes a **career journey SVG** illustration (right side)  
-- 📱💻 Mobile-friendly responsive layout  
+
+- 🪟 Cool glassmorphism login with subtle animations
+- 💬 Career advisor chat backed by a rules engine and curated dataset
+- 📚 500+ skills & careers with bullets, learning paths, and links
+- 🌞/🌙 Dark & Light theme toggle with animated control
+- ✨ Micro-interactions, hover-to-flip cards, and responsive layout
 
 ---
 
@@ -21,34 +21,70 @@ _A beautiful, lightweight career-advisor experience with a rules-based chat and 
 
 | Layer         | Technology Used |
 |---------------|-----------------|
-| **Frontend**  | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
-| **Backend**   | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white) |
-| **Data**      | ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white) |
-| **Deployment**| **Procfile** (Heroku / Render / Railway) |
+| Frontend      | HTML, CSS, JavaScript |
+| Backend       | Python, Flask, Gunicorn |
+| Data          | JSON |
+| Deployment    | Docker / Vercel / Heroku / Render |
 
 ---
 
 ## 🖥️ Run locally (VS Code)
 
-1. Ensure Python **3.10+** is installed. 🐍✅  
-2. Create a virtual environment (recommended):  
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Windows: .venv\Scripts\activate
+1. Ensure Python 3.10+ is installed.
+2. Create a virtual environment (recommended):
 
+```powershell
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+```
 
-   ```
 3. Install dependencies:
-   ```bash
-   pip install flask
-   ```
-4. Start the app:
-   ```bash
-   python app.py
-   ```
+
+```powershell
+pip install -r requirements.txt
+```
+
+4. Start the app (development):
+
+```powershell
+python app.py
+# or use gunicorn for production-like serving
+gunicorn app:app -b 0.0.0.0:5000 --workers 2
+```
+
 5. Open http://localhost:5000 in your browser.
 
-## 📂 Project structure
+---
+
+## Deploying to Vercel (using Docker)
+
+This repo includes `vercel.json` and a `Dockerfile` so Vercel can build and deploy the app using Docker. Vercel will use the Dockerfile to build the image and run the container.
+
+Quick steps:
+
+1. Install the Vercel CLI and login (optional): `vercel login`
+2. From the project root run `vercel` and follow prompts.
+
+Test locally with Docker:
+
+```powershell
+docker build -t personapath:local .
+docker run -p 5000:5000 personapath:local
+# then open http://localhost:5000
+```
+
+Notes:
+
+- Set any environment variables in the Vercel Project Settings → Environment Variables.
+- The app is served by `gunicorn` in the Dockerfile.
+
+---
+
+## Project structure
+
 ```
 PERSONAPATH/
   app.py
@@ -57,13 +93,13 @@ PERSONAPATH/
   requirements.txt
   trim_links.py
   data/
-    skills_careers.json        # 🔎 Add/edit skills & careers here
+    skills_careers.json        # Add/edit skills & careers here
   static/
-    styles.css                 # 🎨 Glassmorphism + animations
-    theme.js                   # 🌞🌙 Theme toggle logic
-    explore.js                 # 🔍 Explore page interactivity
-    dashboard.js               # 📊 Dashboard scripts
-    chat.js                    # 🤖 Chat & rules engine
+    styles.css
+    theme.js
+    explore.js
+    dashboard.js
+    chat.js
   templates/
     base.html
     index.html
@@ -71,11 +107,12 @@ PERSONAPATH/
     dashboard.html
     chat.html
     explore.html
-
-
 ```
 
-## 🧾 Notes
-- The chat uses deterministic rules + search to return **exact data** where possible.
+---
+
+## Notes
+
+- The chat uses deterministic rules + search to return exact data where possible.
 - Replace/add items in `data/skills_careers.json` to customize content.
-- You can deploy to any Python-friendly host (Render, Railway, etc.).
+- You can deploy to any Python-friendly host (Render, Railway, Heroku, etc.).
