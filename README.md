@@ -1,89 +1,89 @@
-﻿# PersonaPath  Personalized Career & Skills Advisor 
+﻿# PersonaPath — Personalized Career & Skills Advisor 🧭💼
 
-A ready-to-run website built with **HTML, CSS, JS** on the frontend and **Python (Flask)** on the backend.
-_A lightweight career-advisor experience with a rules-based chat and 500+ skills & career paths._ 
-
----
-
-##  Features
-
--  Cool glassmorphism login with subtle animations
--  Career advisor chat backed by a rules engine and curated dataset
--  500+ skills & careers with bullets, learning paths, and links
-- / Dark & Light theme toggle with animated control
--  Micro-interactions, hover-to-flip cards, and responsive layout
+A ready-to-run web app with a lightweight frontend and a small Flask backend: a rules-based career advisor and a curated dataset of skills & career paths (500+).
 
 ---
 
-##  Tech Stack
+## ✨ Features
+
+- 🪟 Glassmorphism login with smooth animations
+- 💬 Career advisor chat powered by a rules engine and searchable dataset
+- 📚 500+ skills & careers with bullets, learning paths, and links
+- 🌗 Dark / Light theme toggle with animated control
+- ✨ Micro-interactions, hover-to-flip cards, and responsive layout
+
+---
+
+## 🛠 Tech Stack
 
 | Layer      | Technology Used |
 |------------|-----------------|
 | Frontend   | HTML, CSS, JavaScript |
 | Backend    | Python, Flask, Gunicorn |
 | Data       | JSON |
-| Deployment | Docker / Vercel / Heroku / Render |
+| Deployment | Docker / Vercel / Render / Heroku |
 
 ---
 
-##  Run locally (VS Code)
+## 🖥 Run locally (VS Code)
 
 1. Ensure Python 3.10+ is installed.
-2. Create a virtual environment (recommended):
+2. Create and activate a virtual environment (recommended):
 
-`powershell
+```powershell
 python -m venv .venv
 # Windows
 .venv\Scripts\activate
 # macOS / Linux
 source .venv/bin/activate
-`
+```
 
 3. Install dependencies:
 
-`powershell
+```powershell
 pip install -r requirements.txt
-`
+```
 
 4. Start the app (development):
 
-`powershell
+```powershell
 python app.py
+
 # or use gunicorn for production-like serving
 # gunicorn app:app -b 0.0.0.0:5000 --workers 2
-`
+```
 
-5. Open http://localhost:5000/ in your browser.
+5. Open http://localhost:5000 in your browser.
 
 ---
 
-## Deploying to Vercel (using Docker)
+## 🚀 Deploying (recommendations)
 
-This repo includes ercel.json and a Dockerfile so Vercel can build and deploy the app using Docker. Vercel will use the Dockerfile to build the image and run the container.
+This repo includes a `Dockerfile` and a `render.yaml` so you can deploy easily to Render using Docker. Vercel's Docker builder may not be available in some environments — for Vercel we can convert the app to use serverless functions or publish an image to a container registry.
 
-Quick steps:
+Quick options:
 
-1. Install the Vercel CLI and login (optional): ercel login
-2. From the project root run ercel and follow prompts.
+- Deploy to Render (Docker): connect your GitHub repo in Render and it will use `render.yaml` and your `Dockerfile`.
+- Deploy to Vercel: convert to a Vercel-friendly setup (serverless) or publish a container image and configure Vercel to use it.
 
-Test locally with Docker:
+Test locally with Docker (if Docker is installed):
 
-`powershell
+```powershell
 docker build -t personapath:local .
 docker run -p 5000:5000 personapath:local
-# then open http://localhost:5000/
-`
+# then open http://localhost:5000
+```
 
 Notes:
 
-- Set any environment variables in the Vercel Project Settings  Environment Variables.
-- The app is served by gunicorn in the Dockerfile.
+- Set environment variables in your host's project settings (Render / Vercel / Heroku).
+- The app is served by `gunicorn` in the Dockerfile for production.
 
 ---
 
-## Project structure
+## 📁 Project structure
 
-`
+```
 PERSONAPATH/
   app.py
   Procfile
@@ -105,12 +105,13 @@ PERSONAPATH/
     dashboard.html
     chat.html
     explore.html
-`
+```
 
 ---
 
-## Notes
+## 📝 Notes
 
 - The chat uses deterministic rules + search to return exact data where possible.
-- Replace/add items in data/skills_careers.json to customize content.
+- Edit `data/skills_careers.json` to update the dataset.
 - You can deploy to any Python-friendly host (Render, Railway, Heroku, etc.).
+
