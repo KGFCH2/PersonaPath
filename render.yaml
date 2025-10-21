@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: PersonaPath
+    env: docker
+    plan: free
+    repo: https://github.com/KGFCH2/PersonaPath
+    branch: main
+    autoDeploy: true
+    dockerfilePath: Dockerfile
+    startCommand: gunicorn app:app -b 0.0.0.0:5000
