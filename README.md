@@ -114,4 +114,3 @@ PERSONAPATH/
 - The chat uses deterministic rules + search to return exact data where possible.
 - Edit `data/skills_careers.json` to update the dataset.
 - You can deploy to any Python-friendly host (Render, Railway, Heroku, etc.).
-
